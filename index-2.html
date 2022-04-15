@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Market</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/all.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/second.css" />
+</head>
+
+<body>
+    <!-- Start Upper Bar -->
+    <div class="upper-bar pt-2 pb-1 ps-5 pe-5">
+        <div class="row">
+            <div class="col-6 col-md-3 pd-0">
+                <div class="toggle-div">
+                    <button class="toggle-btn btn active">Delivery</button>
+                    <button class="toggle-btn btn">Pickup</button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 pd-0">
+                <div class="select-delivery flex-div">
+                    <p class="text-white mt-2 ms-auto">Select the delivery address</p>
+                    <button class="btn me-auto"><i class="icon fas fa-edit text-white"></i></button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 pd-0">
+                <p class="text-white-50 text-start mt-2">Nearest delivery <span class="nearest-delivery text-white">today is 13:00-14:00</span></p> 
+            </div>
+                
+            <div class="col-6 col-md-3">
+                <p class="text-white-50 text-end text-md-start mt-2"><span class="text-white" id="counter">+ 8 800 555-35-35</span> Around the clock</p>
+            </div>
+        </div>
+    </div>
+    <!-- End Upper Bar -->
+
+    <!-- Start Tools Section -->
+    <div class="tools mt-4 mb-1 pt-2 pb-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-3 col-xl-2 text-center text-md-start mb-3">
+                    <div class="logo-div">
+                        <img class="logo" src="logo/mini-logo.png" alt="">
+                        <h1 class="d-inline-block fs-5">Nasna Store</h1>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5 mb-3 ms-auto me-auto">
+                    <form action="" class="form flex-div">
+                        <div class="fields pb-1">
+                            <select class="fw-bold" name="" id="">
+                                <option value="">ALL CATEGORIES</option>
+                            </select>
+                            <input class="field ps-2 mt-1" type="text" placeholder="Search in the market" />
+                        </div>
+                        <button class="btn main-btn d-inline-block"><i class="icon fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="col-md-2 text-center text-md-end mt-1">
+                    <button class="second-btn btn me-3"><i class="far fa-heart"></i></button>
+                    <button class="second-btn btn" onclick="toggleCart()"><i class="fas fa-cart-shopping"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Tools Section -->
+
+    <!-- Start Cart section -->
+    <div class="cart pt-2 pb-2 ps-2 pe-2" id="cart">
+        <h4>Cart</h4>
+        <hr class="h-line"/>
+        <ul class="cart-list list-unstyled">
+            <!-- Cart-item -->
+            <li class="cart-item pb-3">
+                <div class="row">
+                    <div class=" col-6 col-md-3 ms-auto me-auto">
+                        <div class="item-image">
+                            <img class="responsive-img" src="logo/mini-logo.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5 pt-2 pb-2">
+                        <h5 class="item-name">Relaxed Fit T-shirt</h5>
+                        <span class="item-price text-black-50">$12.99</span>
+                        <span class="item-status in-stock">In Stock</span>
+                        <form action="" class="item-form mt-3">
+                            <select class="field" name="size" id="">
+                                <option value="XL">XL</option>
+                                <option value="L">L</option>
+                                <option value="S">S</option>
+                            </select>
+                            <select class="field" name="color" id="">
+                                <option value="blue">Blue</option>
+                                <option value="red">Red</option>
+                                <option value="green">Green</option>
+                            </select>
+                            <input class="field" type="number" name="count" min="0" value="1">
+                        </form>
+                    </div>
+                    <div class="col-md-4 pt-2 text-center text-md-end">
+                        <span class="total-price fw-bold d-md-block">&dollar;12.99</span>
+                        <button class="btn save pd-0 ms-3"><i class="icon text-black-50 fas fa-heart"></i> Save</button>
+                        <button class="btn delete  pd-0"><i class="icon text-black-50 fas fa-heart"></i> Delete</button>
+                    </div>
+                </div>
+            </li>            
+            <!-- Cart-item -->
+            <li class="cart-item pb-3">
+                <div class="row">
+                    <div class=" col-6 col-md-3 ms-auto me-auto">
+                        <div class="item-image">
+                            <img class="responsive-img" src="logo/mini-logo.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5 pt-2 pb-2">
+                        <h5 class="item-name">Relaxed Fit T-shirt</h5>
+                        <span class="item-price text-black-50">$12.99</span>
+                        <span class="item-status out-in-stock">In Stock</span>
+                        <form action="" class="item-form mt-3">
+                            <input class="field" type="number" name="count" min="0" value="1">
+                        </form>
+                    </div>
+                    <div class="col-md-4 pt-2 text-center text-md-end">
+                        <span class="total-price fw-bold d-md-block">&dollar;12.99</span>
+                        <button class="btn save pd-0 ms-3"><i class="icon text-black-50 fas fa-heart"></i> Save</button>
+                        <button class="btn delete  pd-0"><i class="icon text-black-50 fas fa-heart"></i> Delete</button>
+                    </div>
+                </div>
+            </li>            
+            <!-- Cart-item -->
+            <li class="cart-item pb-3">
+                <div class="row">
+                    <div class=" col-6 col-md-3 ms-auto me-auto">
+                        <div class="item-image">
+                            <img class="responsive-img" src="logo/mini-logo.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5 pt-2 pb-2">
+                        <h5 class="item-name">Relaxed Fit T-shirt</h5>
+                        <span class="item-price text-black-50">$12.99</span>
+                        <span class="item-status available">Available in 2 days</span>
+                        <form action="" class="item-form mt-3">
+                            <select class="field" name="size" id="">
+                                <option value="XL">XL</option>
+                                <option value="L">L</option>
+                                <option value="S">S</option>
+                            </select>
+                            <select class="field" name="color" id="">
+                                <option value="blue">Blue</option>
+                                <option value="red">Red</option>
+                                <option value="green">Green</option>
+                            </select>
+                            <input class="field" type="number" name="count" min="0" value="1">
+                        </form>
+                    </div>
+                    <div class="col-md-4 pt-2 text-center text-md-end">
+                        <span class="total-price fw-bold d-md-block">&dollar;12.99</span>
+                        <button class="btn save pd-0 ms-3"><i class="icon text-black-50 fas fa-heart"></i> Save</button>
+                        <button class="btn delete  pd-0"><i class="icon text-black-50 fas fa-heart"></i> Delete</button>
+                    </div>
+                </div>
+            </li>            
+        </ul>
+        <button class="btn main-btn w-100">Proceed to checkout</button>
+    </div>
+    <!-- End Cart section -->
+
+    <!-- Start advertisement Section -->
+    <div class="container mb-5">
+        <div class="advertisement">
+            <button class="close btn fw-bold text-white">x</button>
+            <h2 class="text-center text-white fs-1">Advertisement</h2>
+        </div>
+    </div>
+    <!-- End advertisement Section -->
+
+    <!-- Start Products section -->
+    <div class="products pt-2 pb-2 ps-2 pe-2" id="cart">
+        <div class="container">
+            <h4>Products</h4>
+            <hr class="h-line"/>
+            <!-- Products List -->
+            <ul class="products-list list-unstyled">
+                <div class="row w-100 ms-auto me-auto">
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                    <!-- Product-item -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                        <li class="product pt-2 pb-3 ps-3 pe-3">
+                            <!-- Row -->
+                            <div class="row">
+                                <!-- Product image and favorite button -->
+                                <div class=" col-12">
+                                    <div class="product-image">
+                                        <img class="" src="logo/mini-logo.png" alt="">
+                                        <button class="btn fav-btn"><i class="icon far fa-heart"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Product name -->
+                                <div class="col-12">
+                                    <h6 class="product-name">Product name</h6>
+                                </div>
+
+                                <!-- Product price -->
+                                <div class="col-6">
+                                    <span class="product-price price fw-bold">$2.00</span>
+                                </div>
+
+                                <!-- Add button -->
+                                <div class="col-6 text-end">
+                                    <button class="btn add-btn"><i class="icon fas fa-add"></i></button>
+                                </div>
+                            </div>
+                        </li>            
+                    </div>
+
+                </div>
+            </ul>
+        </div>
+    </div>
+    <!-- End Products section -->
+
+    <!-- Javascript files -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/Popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+.product-details {
+    background-color: #eee7;
+}
+
+.b-white {
+    background-color: #FFF;
+}
+
+.big-img {
+    max-height: 300px;
+}
+
+.sm-img {
+    max-height: 100px;
+}
+
+.b-radius {
+    border-radius: 10px;
+}
+
+.autor-photo {
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.info-name {
+    font-size: small;
+}
+
+.info-value {
+    font-size: small;
+}

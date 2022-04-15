@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Market</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/all.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/second.css" />
+</head>
+
+<body>
+    <!-- Start Upper Bar -->
+    <div class="upper-bar pt-2 pb-1 ps-5 pe-5">
+        <div class="row">
+            <div class="col-6 col-md-3 pd-0">
+                <div class="toggle-div">
+                    <button class="toggle-btn btn active">Delivery</button>
+                    <button class="toggle-btn btn">Pickup</button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 pd-0">
+                <div class="select-delivery flex-div">
+                    <p class="text-white mt-2 ms-auto">Select the delivery address</p>
+                    <button class="btn me-auto"><i class="icon fas fa-edit text-white"></i></button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 pd-0">
+                <p class="text-white-50 text-start mt-2">Nearest delivery <span class="nearest-delivery text-white">today is 13:00-14:00</span></p> 
+            </div>
+                
+            <div class="col-6 col-md-3">
+                <p class="text-white-50 text-end text-md-start mt-2"><span class="text-white" id="counter">+ 8 800 555-35-35</span> Around the clock</p>
+            </div>
+        </div>
+    </div>
+    <!-- End Upper Bar -->
+
+    <!-- Start Tools Section -->
+    <div class="tools pt-2 pb-1 mb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-3 col-xl-2 text-center text-md-start mb-3">
+                    <div class="logo-div">
+                        <img class="logo" src="logo/mini-logo.png" alt="">
+                        <h1 class="d-inline-block fs-5">Nasna Store</h1>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5 mb-3 ms-auto me-auto">
+                    <form action="" class="form flex-div">
+                        <div class="fields pb-1">
+                            <select class="fw-bold" name="" id="">
+                                <option value="">ALL CATEGORIES</option>
+                            </select>
+                            <input class="field ps-2 mt-1" type="text" placeholder="Search in the market" />
+                        </div>
+                        <button class="btn main-btn d-inline-block"><i class="icon fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="col-md-2 text-center text-md-end mt-1">
+                    <button class="second-btn btn me-3"><i class="far fa-heart"></i></button>
+                    <button class="second-btn btn" onclick="toggleCart()"><i class="fas fa-cart-shopping"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Tools Section -->
+
+    <!-- Start Cart section -->
+    <div class="cart pt-2 pb-2 ps-2 pe-2" id="cart">
+        <h4>Cart</h4>
+        <hr class="h-line"/>
+        <ul class="cart-list list-unstyled">
+            <!-- Cart-item -->
+            <li class="cart-item pb-3">
+                <div class="row">
+                    <div class=" col-6 col-md-3 ms-auto me-auto">
+                        <div class="item-image">
+                            <img class="responsive-img" src="images/thumb-01.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5 pt-2 pb-2">
+                        <h5 class="item-name">Relaxed Fit T-shirt</h5>
+                        <span class="item-price text-black-50">$12.99</span>
+                        <span class="item-status in-stock">In Stock</span>
+                        <form action="" class="item-form mt-3">
+                            <select class="field" name="size" id="">
+                                <option value="XL">XL</option>
+                                <option value="L">L</option>
+                                <option value="S">S</option>
+                            </select>
+                            <select class="field" name="color" id="">
+                                <option value="blue">Blue</option>
+                                <option value="red">Red</option>
+                                <option value="green">Green</option>
+                            </select>
+                            <input class="field" type="number" name="count" min="0" value="1">
+                        </form>
+                    </div>
+                    <div class="col-md-4 pt-2 text-center text-md-end">
+                        <span class="total-price fw-bold d-md-block">&dollar;12.99</span>
+                        <button class="btn save pd-0 ms-3"><i class="icon text-black-50 fas fa-heart"></i> Save</button>
+                        <button class="btn delete  pd-0"><i class="icon text-black-50 fas fa-heart"></i> Delete</button>
+                    </div>
+                </div>
+            </li>            
+            <!-- Cart-item -->
+            <li class="cart-item pb-3">
+                <div class="row">
+                    <div class=" col-6 col-md-3 ms-auto me-auto">
+                        <div class="item-image">
+                            <img class="responsive-img" src="images/thumb-01.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5 pt-2 pb-2">
+                        <h5 class="item-name">Relaxed Fit T-shirt</h5>
+                        <span class="item-price text-black-50">$12.99</span>
+                        <span class="item-status out-in-stock">In Stock</span>
+                        <form action="" class="item-form mt-3">
+                            <input class="field" type="number" name="count" min="0" value="1">
+                        </form>
+                    </div>
+                    <div class="col-md-4 pt-2 text-center text-md-end">
+                        <span class="total-price fw-bold d-md-block">&dollar;12.99</span>
+                        <button class="btn save pd-0 ms-3"><i class="icon text-black-50 fas fa-heart"></i> Save</button>
+                        <button class="btn delete  pd-0"><i class="icon text-black-50 fas fa-heart"></i> Delete</button>
+                    </div>
+                </div>
+            </li>            
+            <!-- Cart-item -->
+            <li class="cart-item pb-3">
+                <div class="row">
+                    <div class=" col-6 col-md-3 ms-auto me-auto">
+                        <div class="item-image">
+                            <img class="responsive-img" src="images/thumb-01.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5 pt-2 pb-2">
+                        <h5 class="item-name">Relaxed Fit T-shirt</h5>
+                        <span class="item-price text-black-50">$12.99</span>
+                        <span class="item-status available">Available in 2 days</span>
+                        <form action="" class="item-form mt-3">
+                            <select class="field" name="size" id="">
+                                <option value="XL">XL</option>
+                                <option value="L">L</option>
+                                <option value="S">S</option>
+                            </select>
+                            <select class="field" name="color" id="">
+                                <option value="blue">Blue</option>
+                                <option value="red">Red</option>
+                                <option value="green">Green</option>
+                            </select>
+                            <input class="field" type="number" name="count" min="0" value="1">
+                        </form>
+                    </div>
+                    <div class="col-md-4 pt-2 text-center text-md-end">
+                        <span class="total-price fw-bold d-md-block">&dollar;12.99</span>
+                        <button class="btn save pd-0 ms-3"><i class="icon text-black-50 fas fa-heart"></i> Save</button>
+                        <button class="btn delete  pd-0"><i class="icon text-black-50 fas fa-heart"></i> Delete</button>
+                    </div>
+                </div>
+            </li>            
+        </ul>
+        <button class="btn main-btn w-100">Proceed to checkout</button>
+    </div>
+    <!-- End Cart section -->
+
+    <!-- Start order-form section -->
+    <div class="order-form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-5">
+                    <h3 class="fs-5 mb-3">Select delivery method</h3>
+                    <form action="" class="form">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <label for="firstname">First name</label>
+                                    <input class="field d-block w-100" type="text" name="firstname" class="field">
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <label for="lastname">Last name</label>
+                                    <input class="field d-block w-100" type="text" name="lastname" class="field">
+                                </div>
+                                <div class="col-lg-12 mb-3">
+                                    <label for="company">Company</label>
+                                    <input class="field d-block w-100" type="text" name="company" class="field">
+                                </div>
+                                <div class="col-lg-12 mb-3">
+                                    <label for="address">Address</label>
+                                    <input class="field d-block w-100" type="text" name="address" class="field">
+                                </div>
+                                <div class="col-lg-12 mb-3">
+                                    <label for="type">Apartment, Suite, etc.</label>
+                                    <input class="field d-block w-100" type="text" name="type" class="field">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="city">City</label>
+                                    <input class="field d-block w-100" type="text" name="city" class="field">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="country">Country</label>
+                                    <input class="field d-block w-100" type="text" name="country" class="field">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="province">Province</label>
+                                    <input class="field d-block w-100" type="text" name="province" class="field">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="postal-code">Postal code</label>
+                                    <input class="field d-block w-100" type="text" name="postal-code" class="field">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="phone-number">Phone number</label>
+                                    <input class="field d-block w-100" type="text" name="phone-number" class="field">
+                                </div>
+    
+                                
+                                <div class="col-lg-12">
+                                    <hr class="mt-5 mb-5"/>
+                                </div>
+    
+                                <div class="col-lg-12 mb-3">
+                                    <label class="fs-5" for="">Delivery method</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="shipping pt-3 pb-3 ps-3 pe-3 mb-3 active">
+                                        <h6 class="shipping-name fw-bold">Standard shipping</h6>
+                                        <span class="text-black-50">4-10 business days</span>
+                                        <h6 class="fw-bold mt-4">&dollar;4.00</h6>
+                                        <i class="check fas fa-check-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="shipping pt-3 pb-3 ps-3 pe-3">
+                                        <h6 class="shipping-name fw-bold">Express shipping</h6>
+                                        <span class="text-black-50">2-3 business days</span>
+                                        <h6 class="fw-bold mt-4">&dollar;14.00</h6>
+                                        <i class="check fas fa-check-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 mt-3">
+                                    <input class="btn main-btn pt-1 pb-1 ps-2 pe-2" type="submit" value="Save details">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-4 ms-auto">
+                    <h3 class="fs-5 mb-3">order summary</h3>
+                    <div class="row">
+                        <div class="col-6 me-auto">
+                            <label>Subtotal</label>
+                        </div>
+                        <div class="col-6 ms-auto text-end">
+                            <span>$3.090.00</span>
+                        </div>
+                        <div class="col-12">
+                            <hr/>
+                        </div>
+                        <div class="col-6 me-auto">
+                            <label>Tax</label>
+                        </div>
+                        <div class="col-6 ms-auto text-end">
+                            <span>$200.00</span>
+                        </div>
+                        <div class="col-12">
+                            <hr />
+                        </div>
+                        <div class="col-6 me-auto">
+                            <label>Standard delivery</label>
+                        </div>
+                        <div class="col-6 ms-auto text-end">
+                            <span>$4.00</span>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn main-btn w-100 pt-2 pb-2 mt-4 mb-3">Go to payement</button>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn w-100 text-black-50 pt-2 pb-2">Edit bag</button>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn w-100 text-black-50 pt-2 pb-2">Continue shopping</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End order-form section -->
+
+    <!-- Javascript files -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/Popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
